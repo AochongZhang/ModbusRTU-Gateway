@@ -8,6 +8,7 @@ class ModbusRtuGatewayApplicationTests {
 
     @Test
     void contextLoads() {
+        System.out.println("hha");
     }
 
 }

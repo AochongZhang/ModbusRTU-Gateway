@@ -19,8 +19,8 @@ public class StatusHandler extends ChannelInboundHandlerAdapter {
 
     @Override
     public void channelInactive(ChannelHandlerContext ctx) throws Exception {
-        log.info("[设备断开] addr = {}", ctx.channel().remoteAddress());
         String clientId = ChannelConstant.getIdByChannel(ctx.channel());
+        log.info("[设备断开] addr = {}, clientId = {}", ctx.channel().remoteAddress(), clientId);
         if (clientId != null) {
             ChannelConstant.remove(clientId);
         }

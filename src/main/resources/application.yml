@@ -1,3 +1,6 @@
 logging:
   level:
     io.netty.handler.logging.LoggingHandler: debug
+    com.zhangaochong.modbusrtu.gateway: debug
+server:
+  port: 8000

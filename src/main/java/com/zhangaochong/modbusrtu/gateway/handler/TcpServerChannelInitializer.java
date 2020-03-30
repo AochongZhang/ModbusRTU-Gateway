@@ -14,6 +14,10 @@ public class TcpServerChannelInitializer extends ChannelInitializer {
     protected void initChannel(Channel channel) throws Exception {
         channel.pipeline()
                 // 打印日志 DEBUG
-                .addLast(new LoggingHandler());
+                .addLast(new LoggingHandler())
+                // 状态监听
+                .addLast(new StatusHandler())
+                // 异常处理
+                .addLast(new ExceptionCaughtHandler());
     }
 }
